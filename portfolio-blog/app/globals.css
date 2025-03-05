@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for a more vibrant and professional look */
+.bg-gradient-primary {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-600;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300;
+}
+
+.btn-secondary {
+  @apply bg-blue-200 hover:bg-blue-300 text-blue-800 font-bold py-2 px-4 rounded transition duration-300 dark:bg-blue-800 dark:hover:bg-blue-700 dark:text-blue-100;
+}
+
+.card-hover {
+  @apply transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg;
+}
+
+/* Card styles with improved dark mode support */
+.card-gradient {
+  @apply bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-gray-900 shadow-xl rounded-xl;
+}
+
+.card-highlight {
+  @apply border-2 border-transparent hover:border-primary transition-colors duration-300;
+}
+
+.card-glass {
+  @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-xl shadow-xl;
+}
+
+/* Blog-specific styles */
+.blog-content {
+  @apply prose dark:prose-invert max-w-none;
+}
+
+.blog-content h2 {
+  @apply text-2xl font-bold mt-8 mb-4;
+}
+
+.blog-content p {
+  @apply mb-4;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply ml-6 mb-4;
+}
+
+.blog-content li {
+  @apply mb-2;
+}
+
+.blog-content a {
+  @apply text-primary hover:text-primary/80 underline;
+}
+
+/* Responsive typography */
+@layer utilities {
+  .text-responsive {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+  }
+}
+
+/* Improved visibility for dark mode toggle */
+.dark .dark-mode-toggle {
+  @apply bg-gray-700 text-white;
+}
+
+/* Ensure text is visible on all backgrounds */
+.text-on-background {
+  @apply text-gray-900 dark:text-white;
+}
+
+/* Improved responsive padding for sections */
+.section-padding {
+  @apply py-16 sm:py-20 md:py-24 lg:py-32;
+}
+
+/* Responsive container */
+.responsive-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Ensure text visibility in all modes */
+.text-visible {
+  @apply text-gray-900 dark:text-white;
+}
+
+/* Improved button styles */
+.btn-interactive {
+  @apply px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg sm:text-xl inline-block;
+}
+
+/* Responsive headings */
+.heading-1 {
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold;
+}
+
+.heading-2 {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
+}
+
+.heading-3 {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+
+/* Responsive spacing */
+.space-y-responsive {
+  @apply space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10;
+}
+
+/* Improved form input styles */
+.form-input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden;
+}
+
+/* Responsive grid */
+.grid-responsive {
+  @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* Improved transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Accessibility improvements */
+.focus-visible {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-50;
+}
+
+/* Dark mode text */
+.dark-mode-text {
+  @apply text-gray-900 dark:text-white;
+}
+
+/* Improved list styles */
+.list-styled {
+  @apply list-disc list-inside space-y-2;
+}
+
+/* Responsive images */
+.img-responsive {
+  @apply w-full h-auto object-cover;
+}
+
+/* Improved link styles */
+.link-hover {
+  @apply text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline;
+}
+
+/* Custom scrollbar styles */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: theme("colors.gray.100");
+    @apply dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.blue.500");
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.blue.600");
+  }
+}
+
+/* Service card styles */
+.service-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.service-card-icon {
+  @apply w-12 h-12 text-white mb-4;
+}
+
+/* Pricing card styles */
+.pricing-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.pricing-card-popular {
+  @apply border-4 border-primary;
+}
+
+.pricing-card-header {
+  @apply bg-primary text-white text-center py-2 text-sm font-semibold;
+}
+
+.pricing-card-price {
+  @apply text-4xl font-bold mb-2;
+}
+
+.pricing-card-description {
+  @apply text-gray-600 dark:text-gray-300 mb-6;
+}
+
+.pricing-card-feature {
+  @apply flex items-center mb-2;
+}
+
+.pricing-card-feature-icon {
+  @apply w-5 h-5 text-green-500 mr-2;
+}
+
+.pricing-card-cta {
+  @apply block w-full bg-primary text-white text-center py-2 rounded-full hover:bg-primary-dark transition-colors duration-300;
+}
+
+/* Enhanced card styles for dark mode */
+.gradient-card {
+  @apply relative overflow-hidden rounded-xl shadow-xl;
+  @apply bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900;
+}
+
+.gradient-card::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-300;
+}
+
+.gradient-card:hover::before {
+  @apply opacity-100;
+}
+
+/* Animated elements */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Glow effects for dark mode */
+.dark .glow-primary {
+  box-shadow: 0 0 15px 2px rgba(59, 130, 246, 0.3);
+}
+
+.dark .glow-purple {
+  box-shadow: 0 0 15px 2px rgba(139, 92, 246, 0.3);
+}
+
+.dark .glow-indigo {
+  box-shadow: 0 0 15px 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Improved card hover effects */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  @apply shadow-2xl;
+}
+
+/* Glass morphism effects */
+.glass-effect {
+  @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg;
+  @apply border border-white/20 dark:border-gray-700/30;
+}
+
